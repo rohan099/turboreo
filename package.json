@@ -1,0 +1,42 @@
+{
+  "name": "turborepo-basic-shared",
+  "version": "0.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "nohoist": [
+    "**/react",
+    "**/react-dom",
+    "**/react-native",
+    "**/react-native/**",
+    "**/@react-native-*",
+    "**/@react-native-*/**",
+    "**/react-native-*",
+    "**/react-native-*/**",
+    "**/*react-navigation/native*",
+    "**/*react-navigation/native*/**",
+    "**/metro-*",
+    "**/metro-*/**"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev --parallel",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "mobile:android": "turbo run mobile#android"
+  },
+  "devDependencies": {
+    "prettier": "latest",
+    "turbo": "latest"
+  },
+  "engines": {
+    "npm": ">=7.0.0",
+    "node": ">=14.0.0"
+  },
+  "packageManager": "npm@7.15.1",
+  "dependencies": {
+    "react-native-unimodules": "^0.14.10"
+  }
+}
